@@ -9,12 +9,14 @@ via FakerLibrary calls in Robot Framework.
 
 
 class FakerLibrary(object):
-    def __init__(self, **kwargs):
+
+    def __new__(cls, *args, **kwargs):
         # create our faker
-        self._fake = faker.Factory.create(**kwargs)
+        cls._fake = faker.Factory.create(**kwargs)
 
         # set all of the faker's public methods to be our methods
-        for method_name, method in self._fake.__dict__.items():
+        for method_name, method in cls._fake.__dict__.items():
             if not method_name[0] == '_':
-                setattr(self, method_name, method)
+                setattr(cls, method_name, method)
+
 

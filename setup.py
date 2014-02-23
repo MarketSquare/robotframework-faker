@@ -14,8 +14,9 @@ except IOError:
 
 setup(
     name='robotframework-faker',
-    packages=['robotframework-faker'],  # this must be the same as the name above
-    version='0.2',
+    package_dir={'': 'robotframework-faker'},
+    packages=['FakerLibrary'],  # this must be the same as the name above
+    version='0.3',
     description=short_description,
     author='Guy Kisel',
     author_email='guy.kisel@gmail.com',

@@ -1,2 +1,4 @@
+
 include *.txt
 recursive-include docs *.txt
+include README.md LICENSE MANIFEST.in MANIFEST

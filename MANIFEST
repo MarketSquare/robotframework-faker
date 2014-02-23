@@ -4,3 +4,6 @@ setup.cfg
 setup.py
 robotframework-faker/FakerLibrary.py
 robotframework-faker/__init__.py
+LICENSE
+README.md
+requirements.txt

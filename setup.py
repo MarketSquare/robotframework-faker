@@ -2,18 +2,15 @@
 
 from distutils.core import setup
 
-from setuptools import find_packages
-
-
-name = 'Guy Kisel'
-address = 'guy.kisel@gmail.com'
-
-setup(name='robotframework-faker',
-      version='0.1',
-      description='Robot Framework wrapper for faker, a fake test data generator',
-      author=name,
-      author_email=address,
-      url='https://github.com/guykisel/robotframework-faker',
-      packages=find_packages(),
-      install_requires=['fake-factory', 'robotframework'],
+setup(
+    name='robotframework-ride',
+    packages=['robotframework-ride'],  # this must be the same as the name above
+    version='0.1',
+    description='Robot Framework wrapper for faker, a fake test data generator',
+    author='Guy Kisel',
+    author_email='guy.kisel@gmail.com',
+    url='https://github.com/guykisel/robotframework-faker',
+    keywords=['testing', 'faker'],  # arbitrary keywords
+    classifiers=[],
+    install_requires=['fake-factory', 'robotframework'],
 )

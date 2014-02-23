@@ -6,5 +6,5 @@ README.md
 requirements.txt
 setup.cfg
 setup.py
-robotframework-faker/FakerLibrary/FakerLibrary.py
 robotframework-faker/FakerLibrary/__init__.py
+robotframework-faker/FakerLibrary/keywords.py

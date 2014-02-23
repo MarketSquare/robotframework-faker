@@ -7,6 +7,7 @@ via FakerLibrary calls in Robot Framework.
 
 """
 
+
 class FakerLibrary(object):
     def __init__(self, **kwargs):
         # create our faker

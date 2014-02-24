@@ -16,6 +16,10 @@ _fake = faker.Factory.create()
 class FakerKeywords(object):
     ROBOT_LIBRARY_SCOPE = 'Global'
 
+    def __init__(self, locale=None, providers=None):
+        global _fake
+        _fake = faker.Factory.create(locale, providers)
+
 
 # set all of the faker's public methods to be our methods
 for method_name, method in _fake.__dict__.items():

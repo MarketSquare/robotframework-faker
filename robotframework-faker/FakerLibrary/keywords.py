@@ -1,5 +1,3 @@
-import sys
-
 import faker
 
 """
@@ -20,13 +18,10 @@ class FakerKeywords(object):
         global _fake
         _fake = faker.Factory.create(locale, providers)
 
+    def get_keyword_names(self):
+        return _fake.__dict__.keys()
 
-# set all of the faker's public methods to be our methods
-for method_name, method in _fake.__dict__.items():
-    try:
-        if not method_name[0] == '_':
-            setattr(sys.modules[__name__].FakerKeywords, method_name, method)
-    except (IndexError, AttributeError):
-        import traceback
-        traceback.print_exc()
-
+    def __getattr__(self, name):
+        if name in _fake.__dict__:
+            return _fake.__dict__[name]
+        raise AttributeError('Non-existing keyword "{}"'.format(name))

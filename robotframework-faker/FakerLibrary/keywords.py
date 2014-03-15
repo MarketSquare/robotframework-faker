@@ -19,7 +19,7 @@ class FakerKeywords(object):
         _fake = faker.Factory.create(locale, providers)
 
     def get_keyword_names(self):
-        return _fake.__dict__.keys()
+        return [name for name, function in _fake.__dict__.items() if hasattr(function, '__call__')]
 
     def __getattr__(self, name):
         if name in _fake.__dict__:

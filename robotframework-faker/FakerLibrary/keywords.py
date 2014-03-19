@@ -13,7 +13,8 @@ _fake = faker.Factory.create()
 
 class FakerKeywords(object):
     """ 
-    This looks tricky but it's just the Robot Framework Hybrid Library API. http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#hybrid-library-api
+    This looks tricky but it's just the Robot Framework Hybrid Library API. 
+    http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#hybrid-library-api
     """
     
     ROBOT_LIBRARY_SCOPE = 'Global'

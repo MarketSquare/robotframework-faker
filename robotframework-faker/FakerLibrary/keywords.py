@@ -1,4 +1,5 @@
 import faker
+import faker.generator
 
 """
 

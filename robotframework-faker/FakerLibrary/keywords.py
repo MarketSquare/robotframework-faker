@@ -27,12 +27,13 @@ class FakerKeywords(object):
 
     def get_keyword_names(self):
         keywords = [name for name, function in _fake.__dict__.items() if hasattr(function, '__call__')]
-        keywords.append('seed')
-
-    def seed(self, seed_value):
-        return _fake.seed(seed_value)
+        keywords.extend(
+            [name for name, function in faker.generator.Generator.__dict__.items() if
+             hasattr(function, '__call__')])
 
     def __getattr__(self, name):
         if name in _fake.__dict__:
             return _fake.__dict__[name]
+        elif name in faker.generator.Generator.__dict__:
+            return faker.generator.Generator.__dict__[name]
         raise AttributeError('Non-existing keyword "{}"'.format(name))

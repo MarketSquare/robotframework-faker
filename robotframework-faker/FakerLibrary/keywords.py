@@ -31,6 +31,7 @@ class FakerKeywords(object):
         keywords.extend(
             [name for name, function in faker.generator.Generator.__dict__.items() if
              hasattr(function, '__call__')])
+        return keywords
 
     def __getattr__(self, name):
         if name in _fake.__dict__.keys():

@@ -19,12 +19,18 @@ class FakerKeywords(object):
     
     ROBOT_LIBRARY_SCOPE = 'Global'
 
-    def __init__(self, locale=None, providers=None):
+    def __init__(self, locale=None, providers=None, seed=None):
         global _fake
         _fake = faker.Factory.create(locale, providers)
+        if seed:
+            _fake.seed(seed)
 
     def get_keyword_names(self):
-        return [name for name, function in _fake.__dict__.items() if hasattr(function, '__call__')]
+        keywords = [name for name, function in _fake.__dict__.items() if hasattr(function, '__call__')]
+        keywords.append('seed')
+
+    def seed(self, seed_value):
+        return _fake.seed(seed_value)
 
     def __getattr__(self, name):
         if name in _fake.__dict__:

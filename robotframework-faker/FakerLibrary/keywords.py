@@ -33,9 +33,9 @@ class FakerKeywords(object):
              hasattr(function, '__call__')])
 
     def __getattr__(self, name):
-        if name in _fake.__dict__:
+        if name in _fake.__dict__.keys():
             return _autocast(_fake.__dict__[name])
-        elif name in faker.generator.Generator.__dict__:
+        elif name in faker.generator.Generator.__dict__.keys():
             return _autocast(faker.generator.Generator.__dict__[name])
         raise AttributeError('Non-existing keyword "{}"'.format(name))
 

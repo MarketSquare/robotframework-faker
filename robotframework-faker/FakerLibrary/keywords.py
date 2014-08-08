@@ -38,7 +38,7 @@ class FakerKeywords(object):
             return _autocast(_fake.__dict__[name])
         elif name in faker.generator.Generator.__dict__.keys():
             return _autocast(faker.generator.Generator.__dict__[name])
-        raise AttributeError('Non-existing keyword "{}"'.format(name))
+        raise AttributeError('Non-existing keyword "{0}"'.format(name))
 
 
 #

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from distutils.core import setup
+from setuptools import setup
 
 short_description = 'Robot Framework wrapper for faker, a fake test data generator'
 try:

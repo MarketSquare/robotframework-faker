@@ -45,9 +45,9 @@ class FakerKeywords(object):
 
 
 def _str_to_bool(string):
-    if str(string.lower().strip()) == 'true':
+    if str(string).lower().strip() == 'true':
         return True
-    elif str(string.lower().strip()) == 'false':
+    elif str(string).lower().strip() == 'false':
         return False
     raise ValueError('Not True or False')
 

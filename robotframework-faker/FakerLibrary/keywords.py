@@ -1,5 +1,8 @@
+import ast
+
 import faker
 import faker.generator
+from robot.api import logger
 
 """
 
@@ -35,44 +38,36 @@ class FakerKeywords(object):
 
     def __getattr__(self, name):
         if name in _fake.__dict__.keys():
-            return _autocast(_fake.__dict__[name])
+            return _str_vars_to_data(_fake.__dict__[name])
         elif name in faker.generator.Generator.__dict__.keys():
-            return _autocast(faker.generator.Generator.__dict__[name])
+            return _str_vars_to_data(faker.generator.Generator.__dict__[name])
         raise AttributeError('Non-existing keyword "{0}"'.format(name))
 
 
-#
-# From https://stackoverflow.com/questions/7019283/automatically-type-cast-parameters-in-python
-# by sequenceGeek (https://stackoverflow.com/users/525763/sequencegeek)
-# (stackoverflow content is cc-wiki (aka cc-by-sa) licensed)
-#
-def _boolify(s):
-    if s == 'True' or s == 'true':
+def _str_to_bool(string):
+    if str(string).lower().strip() == 'true':
         return True
-    if s == 'False' or s == 'false':
+    elif str(string).lower().strip() == 'false':
         return False
-    raise ValueError('Not Boolean Value!')
+    raise ValueError('Not True or False')
 
 
-def _estimateType(var):
-    '''guesses the str representation of the variables type'''
-    var = str(var)  #important if the parameters aren't strings...
-    for caster in (_boolify, int, float):
-        try:
-            return caster(var)
-        except ValueError:
-            pass
-    return var
+def _str_to_data(string):
+    try:
+        return _str_to_bool(string)
+    except Exception:
+        pass
+    try:
+        return ast.literal_eval(str(string).strip())
+    except Exception:
+        return string
 
 
-def _autocast(dFxn):
-    def wrapped(*c, **d):
-        cp = [_estimateType(x) for x in c]
-        dp = dict((i, _estimateType(j)) for (i, j) in d.items())
-        return dFxn(*cp, **dp)
-
-    return wrapped
-
-#
-# End of stackoverflow content
-#
+def _str_vars_to_data(f):
+    def decorated(*args, **kwargs):
+        args = [_str_to_data(arg) for arg in args]
+        kwargs = dict((arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
+        result = f(*args, **kwargs)
+        logger.debug(result)
+        return result
+    return decorated

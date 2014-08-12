@@ -2,6 +2,7 @@ import ast
 
 import faker
 import faker.generator
+from robot.api import logger
 
 """
 
@@ -50,6 +51,7 @@ def _str_to_bool(string):
         return False
     raise ValueError('Not True or False')
 
+
 def _str_to_data(string):
     try:
         return _str_to_bool(string)
@@ -60,9 +62,12 @@ def _str_to_data(string):
     except Exception:
         return string
 
+
 def _str_vars_to_data(f):
     def decorated(*args, **kwargs):
         args = [_str_to_data(arg) for arg in args]
         kwargs = dict((arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
-        return f(*args, **kwargs)
+        result = f(*args, **kwargs)
+        logger.debug(result)
+        return result
     return decorated

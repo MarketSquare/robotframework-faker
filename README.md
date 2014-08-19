@@ -1,5 +1,9 @@
 robotframework-faker
 ====================
+[![build status](https://travis-ci.org/guykisel/robotframework-faker.svg?branch=master)](https://pypi.python.org/pypi/robotframework-faker)
+[![PyPi version](https://pypip.in/v/robotframework-faker/badge.png)](https://pypi.python.org/pypi/robotframework-faker)
+[![PyPi downloads](https://pypip.in/d/robotframework-faker/badge.png)](https://pypi.python.org/pypi/robotframework-faker)
+[![PyPi downloads](https://pypip.in/license/robotframework-faker/badge.png)](https://pypi.python.org/pypi/robotframework-faker)
 
 Robot Framework keyword library wrapper for [Faker](https://github.com/joke2k/faker).
 
@@ -12,7 +16,7 @@ For more information on Robot Framework please visit [the Robot Framework homepa
 
 Installation
 --------------------
-`pip install -U robotframework-faker`
+`pip install robotframework-faker`
 
 
 Contribute

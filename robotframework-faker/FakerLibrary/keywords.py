@@ -44,19 +44,7 @@ class FakerKeywords(object):
         raise AttributeError('Non-existing keyword "{0}"'.format(name))
 
 
-def _str_to_bool(string):
-    if str(string).lower().strip() == 'true':
-        return True
-    elif str(string).lower().strip() == 'false':
-        return False
-    raise ValueError('Not True or False')
-
-
 def _str_to_data(string):
-    try:
-        return _str_to_bool(string)
-    except Exception:
-        pass
     try:
         return ast.literal_eval(str(string).strip())
     except Exception:

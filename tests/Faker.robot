@@ -30,8 +30,6 @@ Can call Words with integer argument
 Can call SHA-1
     [Tags]    implemented
     SHA1
-    SHA1    True
-    SHA1    False
     SHA1    ${True}
     SHA1    ${False}
 
@@ -39,12 +37,11 @@ Can call Password
     [Tags]    implemented
     Password
     Password    5
-    Password    special_chars=False
-    Password    special_chars=True
-    Password    digits=True
+    Password    special_chars=${False}
+    Password    special_chars=${True}
+    Password    digits=${True}
     Password    digits=${False}
-    Password    upper_case=True
     Password    upper_case=${True}
-    Password    lower_case=True
-    Password    digits=False
-    Password    5823    True    ${False}    True    ${True}
+    Password    lower_case=${True}
+    Password    digits=${False}
+    Password    5823    ${True}    ${False}    ${True}    ${True}

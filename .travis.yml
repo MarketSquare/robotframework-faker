@@ -1,10 +1,29 @@
 language: python
 python:
+  - "2.5"
   - "2.6"
   - "2.7"
+
+env:
+  - JYTHON=true
+  - JYTHON=false
+
+matrix:
+  exclude:
+    - python: 2.6
+      env: JYTHON=true
+    - python: 2.7
+      env: JYTHON=true
+
+
+before_install: if [ "$JYTHON" == "true" ]; then sudo apt-get install jython; fi
+
 # command to install dependencies
 install:
   - "pip install ."
   - "pip install -r requirements.txt"
+
+before_script: if [ "$JYTHON" == "true" ]; then export PYTHON_EXE=jython; jython -c "print ''"; else export PYTHON_EXE=python; fi
+
 # command to run tests
-script: pybot tests
+script: if [ "$JYTHON" == "true" ]; then jybot --randomize all tests; else pybot --randomize all tests; fi

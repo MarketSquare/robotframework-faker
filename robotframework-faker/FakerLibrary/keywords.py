@@ -2,6 +2,7 @@ import ast
 
 import faker
 import faker.generator
+import decorator
 from robot.api import logger
 
 """
@@ -38,7 +39,7 @@ class FakerKeywords(object):
 
     def __getattr__(self, name):
         if name in _fake.__dict__.keys():
-            return _str_vars_to_data(_fake.__dict__[name])
+            return _str_vars_to_data(_fake.__dict__[name].im_func)
         elif name in faker.generator.Generator.__dict__.keys():
             return _str_vars_to_data(faker.generator.Generator.__dict__[name])
         raise AttributeError('Non-existing keyword "{0}"'.format(name))
@@ -51,11 +52,10 @@ def _str_to_data(string):
         return string
 
 
-def _str_vars_to_data(f):
-    def decorated(*args, **kwargs):
-        args = [_str_to_data(arg) for arg in args]
-        kwargs = dict((arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
-        result = f(*args, **kwargs)
-        logger.debug(result)
-        return result
-    return decorated
+@decorator.decorator
+def _str_vars_to_data(f, *args, **kwargs):
+    args = [_str_to_data(arg) for arg in args]
+    kwargs = dict((arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
+    result = f(*args, **kwargs)
+    logger.debug(result)
+    return result

@@ -18,6 +18,25 @@ Installation
 --------------------
 `pip install robotframework-faker`
 
+Usage
+--------------------
+```
+*** Settings ***
+Library    FakerLibrary
+
+*** Test Cases ***
+FakerLibrary Words Generation
+    ${words}=    FakerLibrary.Words
+    Log    words: ${words}
+    ${words}=    FakerLibrary.Words    nb=10
+    Log    words: ${words}
+```
+You can also specify seeds and providers:
+```
+*** Settings ***
+Library    FakerLibrary    locale=de_DE    seed=124
+```
+See FakerLibrary's tests for more usage examples.
 
 Contribute
 --------------------

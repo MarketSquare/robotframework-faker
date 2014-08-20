@@ -42,6 +42,8 @@ class FakerKeywords(object):
         elif name in faker.generator.Generator.__dict__.keys():
             func = faker.generator.Generator.__dict__[name]
         if func:
+            # when running libdoc, need to disable this decorator temporarily
+            # to allow for RF's introspection
             return _str_vars_to_data(func)
         raise AttributeError('Non-existing keyword "{0}"'.format(name))
 

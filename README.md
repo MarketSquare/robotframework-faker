@@ -20,6 +20,7 @@ Installation
 
 Usage
 --------------------
+[FakerLibrary keyword documentation](https://guykisel.github.io/robotframework-faker/)
 ```
 *** Settings ***
 Library    FakerLibrary

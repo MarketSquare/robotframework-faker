@@ -1,7 +1,7 @@
 Changelog for robotframework-faker
 ===========================
 
-2.0.4 (unreleased)
+2.0.4 (2014-10-09)
 ------------------
 
 - Remove changelog from PyPI long_description, it breaks the rst rendering :(

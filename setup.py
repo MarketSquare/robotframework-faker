@@ -13,6 +13,9 @@ try:
 except IOError:
     license = 'MIT License'
 
+with open('CHANGES.rst', 'r', 'utf-8') as f:
+    changes = f.read()
+
 classifiers = """
 Development Status :: 5 - Production/Stable
 License :: OSI Approved :: MIT License
@@ -39,7 +42,7 @@ setup(
               'test automation testautomation '
               'atdd bdd faker'),  # arbitrary keywords
     install_requires=['fake-factory', 'robotframework'],
-    long_description=description,
+    long_description=description + '\n\n' + changes,
     license='MIT',
     classifiers=classifiers,
     platforms='any'

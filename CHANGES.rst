@@ -4,7 +4,8 @@ Changelog for robotframework-faker
 2.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fixed example in README.
+- Add changelog to PyPI long_description.
 
 
 2.0.2 (2014-10-09)

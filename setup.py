@@ -36,7 +36,9 @@ setup(
     author_email='guy.kisel@gmail.com',
     url='https://github.com/guykisel/robotframework-faker',
     download_url='https://pypi.python.org/pypi/robotframework-faker',
-    keywords='robotframework testing test automation testautomation atdd bdd faker',  # arbitrary keywords
+    keywords=('robotframework testing '
+              'test automation testautomation '
+              'atdd bdd faker'),  # arbitrary keywords
     install_requires=['fake-factory', 'robotframework'],
     long_description=description,
     license='MIT',

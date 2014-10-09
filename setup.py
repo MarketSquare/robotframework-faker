@@ -4,7 +4,7 @@ from setuptools import setup
 
 short_description = 'Robot Framework wrapper for faker, a fake test data generator'
 try:
-    description = open('README.md').read()
+    description = open('README.rst').read()
 except IOError:
     description = short_description
 

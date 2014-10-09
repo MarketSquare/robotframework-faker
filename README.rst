@@ -1,7 +1,14 @@
 robotframework-faker
 ====================
 
-|build status| |PyPi version| |PyPi downloads| |PyPi downloads|
+.. image:: https://travis-ci.org/guykisel/robotframework-faker.svg?branch=master
+    :target: https://pypi.python.org/pypi/robotframework-faker
+.. image:: https://pypip.in/v/robotframework-faker/badge.png
+    :target: https://pypi.python.org/pypi/robotframework-faker
+.. image:: https://pypip.in/d/robotframework-faker/badge.png
+    :target: https://pypi.python.org/pypi/robotframework-faker
+.. image:: https://pypip.in/license/robotframework-faker/badge.png
+    :target: https://pypi.python.org/pypi/robotframework-faker
 
 Robot Framework keyword library wrapper for
 `Faker <https://github.com/joke2k/faker>`__.
@@ -56,11 +63,4 @@ Contribute
 If you like this module, please contribute! I welcome patches,
 documentation, issues, ideas, and so on.
 
-.. |build status| image:: https://travis-ci.org/guykisel/robotframework-faker.svg?branch=master
-   :target: https://pypi.python.org/pypi/robotframework-faker
-.. |PyPi version| image:: https://pypip.in/v/robotframework-faker/badge.png
-   :target: https://pypi.python.org/pypi/robotframework-faker
-.. |PyPi downloads| image:: https://pypip.in/d/robotframework-faker/badge.png
-   :target: https://pypi.python.org/pypi/robotframework-faker
-.. |PyPi downloads| image:: https://pypip.in/license/robotframework-faker/badge.png
-   :target: https://pypi.python.org/pypi/robotframework-faker
+

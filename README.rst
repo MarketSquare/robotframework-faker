@@ -36,7 +36,7 @@ Usage
 `FakerLibrary keyword
 documentation <https://guykisel.github.io/robotframework-faker/>`__
 
-::
+.. code:: robotframework
 
     *** Settings ***
     Library    FakerLibrary
@@ -50,7 +50,7 @@ documentation <https://guykisel.github.io/robotframework-faker/>`__
 
 You can also specify seeds and providers:
 
-::
+.. code:: robotframework
 
     *** Settings ***
     Library    FakerLibrary    locale=de_DE    seed=124

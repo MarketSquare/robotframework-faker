@@ -4,7 +4,8 @@ Changelog for robotframework-faker
 2.0.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use robotframework syntax highlighting in README.rst examples
+  (thanks @pekkaklarck)
 
 
 2.0.4 (2014-10-09)

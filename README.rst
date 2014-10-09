@@ -45,7 +45,7 @@ documentation <https://guykisel.github.io/robotframework-faker/>`__
     FakerLibrary Words Generation
         ${words}=    FakerLibrary.Words
         Log    words: ${words}
-        ${words}=    FakerLibrary.Words    nb=10
+        ${words}=    FakerLibrary.Words    nb=${10}
         Log    words: ${words}
 
 You can also specify seeds and providers:

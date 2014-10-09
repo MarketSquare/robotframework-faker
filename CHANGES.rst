@@ -4,7 +4,7 @@ Changelog for robotframework-faker
 2.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Hotfix: Fix README.rst for PyPI compatibility.
 
 
 2.0.1 (2014-10-09)

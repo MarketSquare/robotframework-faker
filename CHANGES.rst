@@ -2,7 +2,7 @@ Changelog for robotframework-faker
 ===========================
 
 2.0.0 (2014-10-09)
------------------
+------------------
 
 - Removed autocasting of input variables. This change is backwards
   incompatible! Going forward, to input non-string data types to FakerLibrary

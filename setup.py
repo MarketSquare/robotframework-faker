@@ -13,7 +13,7 @@ try:
 except IOError:
     license = 'MIT License'
 
-with open('CHANGES.rst', 'r', 'utf-8') as f:
+with open('CHANGES.rst') as f:
     changes = f.read()
 
 classifiers = """

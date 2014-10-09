@@ -23,7 +23,6 @@ Programming Language :: Python :: 2.6
 Programming Language :: Python :: 2.7
 Topic :: Software Development :: Testing
 Topic :: Software Development :: Quality Assurance
-Framework :: Robot Framework
 """.strip().splitlines()
 
 setup(

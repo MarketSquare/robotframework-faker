@@ -10,7 +10,7 @@ Changelog for robotframework-faker
 2.0.1 (2014-10-09)
 ------------------
 
-- Nothing changed yet.
+- Hotfix: Deleted invalid classifier.
 
 
 2.0.0 (2014-10-09)

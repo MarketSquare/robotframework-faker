@@ -1,5 +1,8 @@
+import ast
+
 import faker
 import faker.generator
+import wrapt
 
 """
 
@@ -39,5 +42,21 @@ class FakerKeywords(object):
         elif name in faker.generator.Generator.__dict__.keys():
             func = faker.generator.Generator.__dict__[name]
         if func:
-            return func
+            return _str_vars_to_data(func)
         raise AttributeError('Non-existing keyword "{0}"'.format(name))
+
+
+def _str_to_data(string):
+    try:
+        return ast.literal_eval(str(string).strip())
+    except Exception:
+        return string
+
+
+@wrapt.decorator
+def _str_vars_to_data(f, instance, args, kwargs):
+    args = [_str_to_data(arg) for arg in args]
+    kwargs = dict(
+        (arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
+    result = f(*args, **kwargs)
+    return result

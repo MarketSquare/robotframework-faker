@@ -38,7 +38,7 @@ setup(
     keywords=('robotframework testing '
               'test automation testautomation '
               'atdd bdd faker'),  # arbitrary keywords
-    install_requires=['fake-factory', 'robotframework'],
+    install_requires=['fake-factory', 'robotframework', 'wrapt'],
     long_description=description,
     license='MIT',
     classifiers=classifiers,

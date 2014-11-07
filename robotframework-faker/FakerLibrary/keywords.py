@@ -15,6 +15,22 @@ via FakerLibrary calls in Robot Framework.
 """
 
 
+def _str_to_data(string):
+    try:
+        return ast.literal_eval(str(string).strip())
+    except Exception:
+        return string
+
+
+@wrapt.decorator
+def _str_vars_to_data(f, instance, args, kwargs):
+    args = [_str_to_data(arg) for arg in args]
+    kwargs = dict(
+        (arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
+    result = f(*args, **kwargs)
+    return result
+
+
 class FakerKeywords(object):
     """
     This looks tricky but it's just the Robot Framework Hybrid Library API.
@@ -38,8 +54,14 @@ class FakerKeywords(object):
                          hasattr(function, '__call__')])
         return keywords
 
+    @_str_vars_to_data
+    def seed(self, seed=None):
+        self._fake.seed(seed)
+
     def __getattr__(self, name):
         func = None
+        if name.strip().lower() == 'seed':
+            return self.seed
         if name in self._fake.__dict__.keys():
             func = getattr(self._fake, name)
         elif name in faker.generator.Generator.__dict__.keys():
@@ -47,19 +69,3 @@ class FakerKeywords(object):
         if func:
             return _str_vars_to_data(func)
         raise AttributeError('Non-existing keyword "{0}"'.format(name))
-
-
-def _str_to_data(string):
-    try:
-        return ast.literal_eval(str(string).strip())
-    except Exception:
-        return string
-
-
-@wrapt.decorator
-def _str_vars_to_data(f, instance, args, kwargs):
-    args = [_str_to_data(arg) for arg in args]
-    kwargs = dict(
-        (arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
-    result = f(*args, **kwargs)
-    return result

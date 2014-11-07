@@ -15,8 +15,19 @@ Two Calls To Faker Should Give Different Results
     Should Not Be Empty    ${name2}
     Should Not Be Equal As Strings    ${name}    ${name2}
 
+Two Calls To Faker With Same Seed Should Give Same Results
+    FakerLibrary.Seed    5
+    ${name}=    FakerLibrary.Name
+    Should Not Be Empty    ${name}
+    FakerLibrary.Seed    ${5}
+    ${name2}=    FakerLibrary.Name
+    Should Not Be Empty    ${name2}
+    Should Be Equal As Strings    ${name}    ${name2}
+
 Can Seed Faker
     FakerLibrary.Seed    ${5}
+    FakerLibrary.Seed    seed
+    FakerLibrary.Seed
 
 Can Seed Faker with str integer arguement
     FakerLibrary.Seed    5
@@ -24,10 +35,12 @@ Can Seed Faker with str integer arguement
 Can call Words with integer argument
     ${WordsList}=    Words    nb=${10}
     Log    ${WordsList}
+    Length Should Be    ${WordsList}    10
 
 Can call Words with str integer argument
     ${WordsList}=    Words    nb=10
     Log    ${WordsList}
+    Length Should Be    ${WordsList}    10
 
 Can call SHA-1
     SHA1
@@ -36,18 +49,30 @@ Can call SHA-1
     SHA1    True
     SHA1    False
 
+Can Lexify
+    ${lexed}=    Lexify    blah???
+    Length Should Be    ${lexed}    7
+    Should Start With    ${lexed}    blah
+
 Can call Password
-    Password
-    Password    ${5}
-    Password    5
-    Password    special_chars=${False}
-    Password    special_chars=${True}
-    Password    digits=${True}
-    Password    digits=${False}
-    Password    digits=True
-    Password    digits=False
-    Password    upper_case=${True}
-    Password    lower_case=${True}
-    Password    digits=${False}
-    Password    5823    ${True}    ${False}    ${True}    ${True}
-    Password    ${5823}    ${True}    ${False}    ${True}    ${True}
+    ${pass}=    Password
+    Length Should Be    ${pass}    10
+    ${pass}=    Password    ${5}
+    Length Should Be    ${pass}    5
+    ${pass}=    Password    5
+    Length Should Be    ${pass}    5
+    ${pass}=    Password    special_chars=${False}
+    ${pass}=    Password    special_chars=${True}
+    ${pass}=    Password    digits=${True}
+    ${pass}=    Password    digits=${False}
+    ${pass}=    Password    digits=True
+    ${pass}=    Password    digits=False
+    ${pass}=    Password    upper_case=${True}
+    ${pass}=    Password    lower_case=${True}
+    ${pass}=    Password    digits=${False}
+    ${pass}=    Password    5823    ${True}    ${False}    ${True}    ${True}
+    Length Should Be    ${pass}    5823
+    ${pass}=    Password    ${5823}    ${True}    ${False}    ${True}    ${True}
+    Length Should Be    ${pass}    5823
+
+*** Keywords ***

@@ -4,10 +4,9 @@ This is a very thin wrapper for faker. You can access all of faker's usual
 methods via FakerLibrary calls in Robot Framework.
 
 """
-
-# pylint: disable=E1120
-
+# pylint: disable=E1120,W0613
 import ast
+
 import faker
 import faker.generator
 import wrapt

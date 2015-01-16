@@ -6,7 +6,7 @@ python:
 install:
   - "pip install ."
   - if [[ $TRAVIS_PYTHON_VERSION != '2.6' ]]; then pip install -r requirements-dev.txt; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install -r pre-commit flake8; fi
+  - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install pre-commit flake8; fi
   - "pip install -r requirements.txt"
 # command to run tests
 script:

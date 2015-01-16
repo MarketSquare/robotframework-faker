@@ -1,18 +1,16 @@
+"""
+
+This is a very thin wrapper for faker. You can access all of faker's usual
+methods via FakerLibrary calls in Robot Framework.
+
+"""
+
 # pylint: disable=E1120
 
 import ast
-
 import faker
 import faker.generator
 import wrapt
-
-
-"""
-
-This is a very thin wrapper for faker. You can access all of faker's usual methods
-via FakerLibrary calls in Robot Framework.
-
-"""
 
 
 def _str_to_data(string):

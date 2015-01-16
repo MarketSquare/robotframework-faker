@@ -1,5 +1,5 @@
 -   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: d8a44784fcf4920ac11d10b9c12549a6f73de67a
+    sha: fea9b2ece73cfac7e0246e6d84bcd1dfce5bce1b
     hooks:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
@@ -10,25 +10,25 @@
         - -v
     -   id: check-json
     -   id: check-yaml
+    -   id: check-added-large-files
+    -   id: check-case-conflict
+    -   id: check-docstring-first
     -   id: debug-statements
+    -   id: requirements-txt-fixer
     -   id: name-tests-test
     -   id: flake8
         args:
         - --max-line-length=100
--   repo: git://github.com/FalconSocial/pre-commit-python-sorter
-    sha: b7f5d468c67c3c4a6ea7cdf68c40778095b0f19b
+        - --max-complexity=10
+-   repo: git://github.com/asottile/reorder_python_imports
+    sha: ab361ca1e4dfaeea0c4eab464c799e02cb306ab3
     hooks:
-    -   id: python-import-sorter
-        args:
-        - --silent-overwrite
+    -   id: reorder-python-imports
 -   repo: git://github.com/guykisel/pre-commit-robotframework-tidy
     sha: 07d9ed1dea81d8c0abc783a8f3469ca01801004b
     hooks:
     -   id: robotframework-tidy-wrapper
 -   repo: git://github.com/guykisel/prospector-mirror
-    sha: 41e0faa3d8b999830ed22d508db33f920d189996
+    sha: 00fbd80101566b1b9c873c71f2ab7b95b8bd0a7d
     hooks:
     -   id: prospector
-        args:
-        - -o=pylint
-        - --strictness=verylow

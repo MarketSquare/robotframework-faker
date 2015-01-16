@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-
 from setuptools import setup
 
 short_description = 'Robot Framework wrapper for faker, a fake test data generator'
@@ -8,10 +7,6 @@ try:
 except IOError:
     description = short_description
 
-try:
-    license = open('LICENSE').read()
-except IOError:
-    license = 'MIT License'
 
 classifiers = """
 Development Status :: 5 - Production/Stable

@@ -1,12 +1,11 @@
+"""
+
+This is a very thin wrapper for faker. You can access all of faker's usual
+methods via FakerLibrary calls in Robot Framework.
+
+"""
 import faker
 import faker.generator
-
-"""
-
-This is a very thin wrapper for faker. You can access all of faker's usual methods
-via FakerLibrary calls in Robot Framework.
-
-"""
 
 
 class FakerKeywords(object):

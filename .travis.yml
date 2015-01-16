@@ -5,6 +5,9 @@ python:
 # command to install dependencies
 install:
   - "pip install ."
+  - "pip install -r requirements-dev.txt"
   - "pip install -r requirements.txt"
 # command to run tests
-script: pybot tests
+script:
+  - pybot tests
+  - flake8 robotframework-faker tests

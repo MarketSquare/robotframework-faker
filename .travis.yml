@@ -11,4 +11,4 @@ install:
 script:
   - pybot tests
   - flake8 robotframework-faker tests
-  - prospector
+  - if [[ $TRAVIS_PYTHON_VERSION != '2.6' ]]; then prospector; fi

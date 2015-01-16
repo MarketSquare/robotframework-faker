@@ -11,3 +11,4 @@ install:
 script:
   - pybot tests
   - flake8 robotframework-faker tests
+  - prospector

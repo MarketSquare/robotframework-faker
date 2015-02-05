@@ -24,7 +24,7 @@ setup(
     name='robotframework-faker',
     package_dir={'': 'robotframework-faker'},
     packages=['FakerLibrary'],  # this must be the same as the name above
-    version='3.0.0',
+    version='3.0.1.dev0',
     description=short_description,
     author='Guy Kisel',
     author_email='guy.kisel@gmail.com',

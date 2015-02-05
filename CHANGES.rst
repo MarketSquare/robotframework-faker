@@ -1,6 +1,12 @@
 Changelog for robotframework-faker
 ===========================
 
+3.0.1 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
 3.0.0 (2015-02-05)
 ------------------
 

@@ -1,7 +1,7 @@
 Changelog for robotframework-faker
 ===========================
 
-3.0.0 (2015-05-02)
+3.0.0 (2015-02-05)
 ------------------
 
 - Use robotframework syntax highlighting in README.rst examples.

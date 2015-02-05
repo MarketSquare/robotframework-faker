@@ -1,11 +1,14 @@
 Changelog for robotframework-faker
 ===========================
 
-2.0.5 (unreleased)
+3.0.0 (2015-05-02)
 ------------------
 
-- Use robotframework syntax highlighting in README.rst examples
+- Use robotframework syntax highlighting in README.rst examples.
   (thanks @pekkaklarck)
+- Autocast string inputs to their most likely types. Adds wrapt as a dependency.
+  NOTE: This change breaks some backwards-compatibility.
+- Set up static analysis in Travis-CI.
 
 
 2.0.4 (2014-10-09)

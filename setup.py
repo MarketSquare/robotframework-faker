@@ -14,7 +14,6 @@ License :: OSI Approved :: MIT License
 Operating System :: OS Independent
 Programming Language :: Python
 Programming Language :: Python :: 2
-Programming Language :: Python :: 2.6
 Programming Language :: Python :: 2.7
 Topic :: Software Development :: Testing
 Topic :: Software Development :: Quality Assurance
@@ -33,7 +32,7 @@ setup(
     keywords=('robotframework testing '
               'test automation testautomation '
               'atdd bdd faker'),  # arbitrary keywords
-    install_requires=['fake-factory', 'robotframework', 'wrapt'],
+    install_requires=['faker', 'robotframework', 'wrapt'],
     long_description=description,
     license='MIT',
     classifiers=classifiers,

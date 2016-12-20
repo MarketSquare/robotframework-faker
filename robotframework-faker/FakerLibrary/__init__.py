@@ -1,7 +1,4 @@
-__author__ = 'gkisel'
-
 import pkg_resources
-
 from keywords import FakerKeywords
 
 

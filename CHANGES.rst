@@ -1,10 +1,11 @@
 Changelog for robotframework-faker
 ===========================
 
-3.0.1 (unreleased)
+4.0.0 (2016-12-19)
 ------------------
 
-- Nothing changed yet.
+- fake-factory was renamed to faker. (thanks @funkymonkeymonk)
+- Dropped Python 2.6 support since faker no longer supports it. (thanks @funkymonkeymonk)
 
 
 3.0.0 (2015-02-05)

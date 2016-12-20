@@ -4,11 +4,10 @@ python:
 # command to install dependencies
 install:
   - "pip install ."
-  - if [[ $TRAVIS_PYTHON_VERSION != '2.6' ]]; then pip install -r requirements-dev.txt; fi
-  - if [[ $TRAVIS_PYTHON_VERSION == '2.6' ]]; then pip install pre-commit flake8; fi
+  - "pip install -r requirements-dev.txt"
   - "pip install -r requirements.txt"
 # command to run tests
 script:
   - pybot tests
   - flake8 robotframework-faker tests
-  - if [[ $TRAVIS_PYTHON_VERSION != '2.6' ]]; then prospector; fi
+  - prospector

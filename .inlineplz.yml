@@ -1,0 +1,6 @@
+ignore_paths:
+    - node_modules
+    - .tox
+    - .git
+enabled_linters:
+    - prospector

@@ -1,5 +1,5 @@
 import pkg_resources
-from keywords import FakerKeywords
+from .keywords import FakerKeywords
 
 
 __version__ = pkg_resources.get_distribution("robotframework-faker").version

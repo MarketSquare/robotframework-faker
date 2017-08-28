@@ -1,9 +1,3 @@
-addons:
-  apt:
-    packages:
-    - python3.6-dev
-    sources:
-    - deadsnakes
 deploy:
   on:
     condition: "$TRAVIS_PYTHON_VERSION == 2.7"

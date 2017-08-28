@@ -1,3 +1,5 @@
+-e .
 flake8
 pre-commit
 prospector
+-r requirements.txt

@@ -6,8 +6,8 @@ try:
     description = open('README.rst').read()
 except IOError:
     description = short_description
-    
-    
+
+
 classifiers = """
 Development Status :: 5 - Production/Stable
 License :: OSI Approved :: MIT License

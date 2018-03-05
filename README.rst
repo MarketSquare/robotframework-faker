@@ -3,11 +3,11 @@ robotframework-faker
 
 .. image:: https://travis-ci.org/guykisel/robotframework-faker.svg?branch=master
     :target: https://pypi.python.org/pypi/robotframework-faker
-.. image:: https://pypip.in/v/robotframework-faker/badge.png
+.. image:: https://img.shields.io/pypi/v/robotframework-faker.svg
     :target: https://pypi.python.org/pypi/robotframework-faker
-.. image:: https://pypip.in/d/robotframework-faker/badge.png
+.. image:: https://img.shields.io/pypi/dm/robotframework-faker.svg
     :target: https://pypi.python.org/pypi/robotframework-faker
-.. image:: https://pypip.in/license/robotframework-faker/badge.png
+.. image:: https://img.shields.io/pypi/l/robotframework-faker.svg
     :target: https://pypi.python.org/pypi/robotframework-faker
 
 Robot Framework keyword library wrapper for

@@ -7,7 +7,7 @@ methods via FakerLibrary calls in Robot Framework.
 # pylint: disable=E1120,W0613
 import ast
 
-import faker
+import faker.factory
 import faker.generator
 import wrapt
 
@@ -35,10 +35,10 @@ class FakerKeywords(object):
     """
 
     ROBOT_LIBRARY_SCOPE = 'Global'
-    _fake = faker.Faker()
+    _fake = faker.factory.Factory.create()
 
     def __init__(self, locale=None, providers=None, seed=None):
-        self._fake = faker.Faker(locale, providers)
+        self._fake = faker.factory.Factory.create(locale, providers)
         if seed:
             self._fake.seed(seed)
 
@@ -49,6 +49,9 @@ class FakerKeywords(object):
         keywords.extend([name for name, function in
                          faker.generator.Generator.__dict__.items() if
                          hasattr(function, '__call__')])
+
+        keywords.append('seed')
+
         return keywords
 
     @_str_vars_to_data

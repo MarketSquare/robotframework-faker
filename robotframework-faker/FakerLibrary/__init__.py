@@ -11,4 +11,5 @@ class FakerLibrary(FakerKeywords):
     """
 
     """
-    ROBOT_LIBRARY_SCOPE = 'GLOBAL'
+
+    ROBOT_LIBRARY_SCOPE = "GLOBAL"

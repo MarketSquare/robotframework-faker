@@ -11,8 +11,8 @@ deploy:
 install:
 - pip install -U pip
 - pip install tox-travis
-- pip install -r requirements-dev.txt
-- python setup.py develop
+#- pip install -r requirements-dev.txt
+#- python setup.py develop
 language: python
 python:
 - '3.6'

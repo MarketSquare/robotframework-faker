@@ -4,7 +4,7 @@ This is a very thin wrapper for faker. You can access all of faker's usual
 methods via FakerLibrary calls in Robot Framework.
 
 """
-# pylint: disable=E1120,W0613
+# pylint: disable=no-value-for-parameter,unused-argument,useless-object-inheritance
 import ast
 
 import faker.factory

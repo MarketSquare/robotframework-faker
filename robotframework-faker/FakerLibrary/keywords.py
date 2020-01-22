@@ -23,7 +23,9 @@ def _str_to_data(string):
 @wrapt.decorator
 def _str_vars_to_data(f, instance, args, kwargs):
     args = [_str_to_data(arg) for arg in args]
-    kwargs = dict((arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
+    kwargs = dict(
+        (arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items()
+    )
     result = f(*args, **kwargs)
     return result
 

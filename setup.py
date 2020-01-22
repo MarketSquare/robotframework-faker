@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 from setuptools import setup
 
-short_description = "Robot Framework wrapper for faker, a fake test data generator"
+short_description = (
+    "Robot Framework wrapper for faker, a fake test data generator"
+)
 try:
     description = open("README.rst").read()
 except IOError:
@@ -34,7 +36,9 @@ setup(
     url="https://github.com/guykisel/robotframework-faker",
     download_url="https://pypi.python.org/pypi/robotframework-faker",
     keywords=(
-        "robotframework testing " "test automation testautomation " "atdd bdd faker"
+        "robotframework testing "
+        "test automation testautomation "
+        "atdd bdd faker"
     ),  # arbitrary keywords
     install_requires=["faker", "robotframework", "wrapt"],
     long_description=description,

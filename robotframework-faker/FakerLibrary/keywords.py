@@ -4,7 +4,7 @@ This is a very thin wrapper for faker. You can access all of faker's usual
 methods via FakerLibrary calls in Robot Framework.
 
 """
-# pylint: disable=E1120,W0613
+# pylint: disable=no-value-for-parameter,unused-argument,useless-object-inheritance
 import ast
 
 import faker.factory
@@ -23,7 +23,8 @@ def _str_to_data(string):
 def _str_vars_to_data(f, instance, args, kwargs):
     args = [_str_to_data(arg) for arg in args]
     kwargs = dict(
-        (arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items())
+        (arg_name, _str_to_data(arg)) for arg_name, arg in kwargs.items()
+    )
     result = f(*args, **kwargs)
     return result
 
@@ -34,7 +35,7 @@ class FakerKeywords(object):
     http://robotframework.googlecode.com/hg/doc/userguide/RobotFrameworkUserGuide.html#hybrid-library-api
     """
 
-    ROBOT_LIBRARY_SCOPE = 'Global'
+    ROBOT_LIBRARY_SCOPE = "Global"
     _fake = faker.factory.Factory.create()
 
     def __init__(self, locale=None, providers=None, seed=None):
@@ -43,14 +44,21 @@ class FakerKeywords(object):
             self._fake.seed(seed)
 
     def get_keyword_names(self):
-        keywords = [name for name, function in self._fake.__dict__.items() if
-                    hasattr(function, '__call__')]
+        keywords = [
+            name
+            for name, function in self._fake.__dict__.items()
+            if hasattr(function, "__call__")
+        ]
 
-        keywords.extend([name for name, function in
-                         faker.generator.Generator.__dict__.items() if
-                         hasattr(function, '__call__')])
+        keywords.extend(
+            [
+                name
+                for name, function in faker.generator.Generator.__dict__.items()
+                if hasattr(function, "__call__")
+            ]
+        )
 
-        keywords.append('seed')
+        keywords.append("seed")
 
         return keywords
 
@@ -60,7 +68,7 @@ class FakerKeywords(object):
 
     def __getattr__(self, name):
         func = None
-        if name.strip().lower() == 'seed':
+        if name.strip().lower() == "seed":
             return self.seed
         if name in self._fake.__dict__.keys():
             func = getattr(self._fake, name)

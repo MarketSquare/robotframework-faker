@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 from setuptools import setup
 
-short_description = 'Robot Framework wrapper for faker, a fake test data generator'
+short_description = (
+    "Robot Framework wrapper for faker, a fake test data generator"
+)
 try:
-    description = open('README.rst').read()
+    description = open("README.rst").read()
 except IOError:
     description = short_description
 
@@ -24,21 +26,23 @@ Topic :: Software Development :: Quality Assurance
 """.strip().splitlines()
 
 setup(
-    name='robotframework-faker',
-    package_dir={'': 'robotframework-faker'},
-    packages=['FakerLibrary'],  # this must be the same as the name above
-    version='4.3.0',
+    name="robotframework-faker",
+    package_dir={"": "robotframework-faker"},
+    packages=["FakerLibrary"],  # this must be the same as the name above
+    version="4.3.0",
     description=short_description,
-    author='Guy Kisel',
-    author_email='guy.kisel@gmail.com',
-    url='https://github.com/guykisel/robotframework-faker',
-    download_url='https://pypi.python.org/pypi/robotframework-faker',
-    keywords=('robotframework testing '
-              'test automation testautomation '
-              'atdd bdd faker'),  # arbitrary keywords
-    install_requires=['faker', 'robotframework', 'wrapt'],
+    author="Guy Kisel",
+    author_email="guy.kisel@gmail.com",
+    url="https://github.com/guykisel/robotframework-faker",
+    download_url="https://pypi.python.org/pypi/robotframework-faker",
+    keywords=(
+        "robotframework testing "
+        "test automation testautomation "
+        "atdd bdd faker"
+    ),  # arbitrary keywords
+    install_requires=["faker", "robotframework", "wrapt"],
     long_description=description,
-    license='MIT',
+    license="MIT",
     classifiers=classifiers,
-    platforms='any'
+    platforms="any",
 )

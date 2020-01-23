@@ -29,7 +29,7 @@ Can Seed Faker
     FakerLibrary.Seed    seed
     FakerLibrary.Seed
 
-Can Seed Faker with str integer arguement
+Can Seed Faker with str integer argument
     FakerLibrary.Seed    5
 
 Can call Words with integer argument

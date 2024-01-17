@@ -1,7 +1,7 @@
 robotframework-faker
 ====================
 
-.. image:: https://travis-ci.org/guykisel/robotframework-faker.svg?branch=master
+.. image:: https://travis-ci.org/marketsquare/robotframework-faker.svg?branch=master
     :target: https://pypi.python.org/pypi/robotframework-faker
 .. image:: https://img.shields.io/pypi/v/robotframework-faker.svg
     :target: https://pypi.python.org/pypi/robotframework-faker
@@ -34,7 +34,7 @@ Usage
 -----
 
 `FakerLibrary keyword
-documentation <https://guykisel.github.io/robotframework-faker/>`__
+documentation <https://marketsquare.github.io/robotframework-faker/>`__
 
 .. code:: robotframework
 
@@ -55,7 +55,7 @@ You can also specify seeds and providers:
     *** Settings ***
     Library    FakerLibrary    locale=de_DE    seed=124
 
-See `FakerLibrary's tests <https://github.com/guykisel/robotframework-faker/tree/master/tests/>`__ for more usage examples.
+See `FakerLibrary's tests <https://github.com/marketsquare/robotframework-faker/tree/master/tests/>`__ for more usage examples.
 
 Contribute
 ----------

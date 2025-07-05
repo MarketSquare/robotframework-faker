@@ -1,8 +1,8 @@
-import pkg_resources
+from importlib.metadata import version
 from .keywords import FakerKeywords
 
 
-__version__ = pkg_resources.get_distribution("robotframework-faker").version
+__version__ = version("robotframework-faker")
 
 
 class FakerLibrary(FakerKeywords):

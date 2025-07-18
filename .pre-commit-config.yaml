@@ -1,5 +1,6 @@
+repos:
 -   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: fea9b2ece73cfac7e0246e6d84bcd1dfce5bce1b
+    rev: fea9b2ece73cfac7e0246e6d84bcd1dfce5bce1b
     hooks:
     -   id: trailing-whitespace
     -   id: end-of-file-fixer
@@ -21,14 +22,14 @@
         - --max-line-length=100
         - --max-complexity=10
 -   repo: git://github.com/asottile/reorder_python_imports
-    sha: ab361ca1e4dfaeea0c4eab464c799e02cb306ab3
+    rev: ab361ca1e4dfaeea0c4eab464c799e02cb306ab3
     hooks:
     -   id: reorder-python-imports
 -   repo: git://github.com/guykisel/pre-commit-robotframework-tidy
-    sha: 07d9ed1dea81d8c0abc783a8f3469ca01801004b
+    rev: 07d9ed1dea81d8c0abc783a8f3469ca01801004b
     hooks:
     -   id: robotframework-tidy-wrapper
 -   repo: git://github.com/guykisel/prospector-mirror
-    sha: 00fbd80101566b1b9c873c71f2ab7b95b8bd0a7d
+    rev: 00fbd80101566b1b9c873c71f2ab7b95b8bd0a7d
     hooks:
     -   id: prospector

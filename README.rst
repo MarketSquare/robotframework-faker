@@ -30,6 +30,14 @@ Installation
 
 ``pip install robotframework-faker``
 
+Faker package dependency
+------------------------
+
+Starting with FakerLibrary v6.0.0, the corresponding version of Faker Python package
+is no longed pinned in its requirements. It will be up to the users of this library to
+select and, if decided upon, to pin the version in their own setup and CI environments.
+Note this means the keyword documentation may not match that on the users system.
+
 Usage
 -----
 
@@ -60,7 +68,7 @@ See `FakerLibrary's tests <https://github.com/marketsquare/robotframework-faker/
 Contribute
 ----------
 
-If you like this module, please contribute! I welcome patches,
+If you like this module, please contribute! We welcome patches,
 documentation, issues, ideas, and so on.
 
 

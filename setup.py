@@ -17,10 +17,11 @@ Operating System :: OS Independent
 Programming Language :: Python
 Programming Language :: Python :: 3
 Programming Language :: Python :: 3 :: Only
-Programming Language :: Python :: 3.5
-Programming Language :: Python :: 3.6
-Programming Language :: Python :: 3.7
-Programming Language :: Python :: 3.8
+Programming Language :: Python :: 3.9
+Programming Language :: Python :: 3.10
+Programming Language :: Python :: 3.11
+Programming Language :: Python :: 3.12
+Programming Language :: Python :: 3.13
 Topic :: Software Development :: Testing
 Topic :: Software Development :: Quality Assurance
 """.strip().splitlines()
@@ -29,11 +30,11 @@ setup(
     name="robotframework-faker",
     package_dir={"": "robotframework-faker"},
     packages=["FakerLibrary"],  # this must be the same as the name above
-    version="5.0.0",
+    version="6.0.0",
     description=short_description,
-    author="Guy Kisel",
-    author_email="guy.kisel@gmail.com",
-    url="https://github.com/guykisel/robotframework-faker",
+    author="Robot Framework Community, Ed Manlove",
+    author_email="emanlove@verizon.net",
+    url="https://github.com/marketsquare/robotframework-faker",
     download_url="https://pypi.python.org/pypi/robotframework-faker",
     keywords=(
         "robotframework testing "
